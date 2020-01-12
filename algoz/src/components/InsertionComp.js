@@ -17,7 +17,7 @@ const spring = {
 
 
 
-class BubbleCard extends Component {
+class Insertion extends Component {
     constructor(props) {
         var min=110; 
         var max=400;  
@@ -32,8 +32,7 @@ class BubbleCard extends Component {
             swapped: 10,
             curr: null,
             sorted: [...arr],
-            done: 0,
-            comp: 0
+            done: 0
         }
 
         this.swap = this.swap.bind(this);
@@ -54,11 +53,9 @@ class BubbleCard extends Component {
     }
 
     compare = (first_index , second_index) => {
-        
         if(this.state.tosort[first_index] > this.state.tosort[second_index]){
             this.swap(first_index, second_index);
         }
-
     }
 
     iter = i => {
@@ -122,7 +119,7 @@ class BubbleCard extends Component {
                 </Breadcrumb>
                 <div className="container-fluid" >
                     <div className="row" >
-                        {/* <div className="col" style={{ backgroundColor: "#ffffff" }}></div> */}
+                        <div className="col" style={{ backgroundColor: "#ffffff" }}></div>
                         <div className="col-8" style={{ backgroundColor: "#ffffff" }}>
                             <div className="row" style={{ offset: 3, height: 400 }}>
                                 {this.state.tosort.map(height => (
@@ -143,17 +140,7 @@ class BubbleCard extends Component {
                             </Progress>
                         </div>
                         
-                        <div className="col" style={{ backgroundColor: "#ffffff" }}>
-                            <h2>Stats</h2>
-                            <span>Number of Comparisons- </span>
-                            <br></br>
-                                <span>{this.state.comp}</span>
-                            <br/>
-                            <br/>
-                            <span>Sorted Elements(from the end)- </span>
-                            <br/>
-                            <span>{this.state.done}</span>
-                        </div>
+                        <div className="col" style={{ backgroundColor: "#ffffff" }}></div>
                     </div>
                 </div>
                 <Button color="success" style={{ marginTop: 100, marginBottom: 50}} onClick={this.start_Sort}>Bubble Sort</Button>{' '} 
@@ -169,4 +156,4 @@ class BubbleCard extends Component {
     }
 }
 
-export default BubbleCard;
+export default Insertion;
